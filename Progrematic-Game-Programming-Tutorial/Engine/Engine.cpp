@@ -5,7 +5,13 @@ using namespace std;
 
 int Engine::screen_width = 1024;
 int Engine::screen_height = 768;
+double Engine::dt = 0;
+double Engine::last_time = 0;
 GLFWwindow *Engine::window = NULL;
+
+double Engine::getDT() {
+    return dt;
+}
 
 Engine::Engine() {
 
@@ -39,6 +45,12 @@ bool Engine::initilize(char *windowTitle) {
     glfwGetFramebufferSize(window, &width, &height);
     glfwSwapInterval(1);
 
+    // Setup callbacks
+    glfwSetMouseButtonCallback(window, Mouse::mouse_button_callback);
+    glfwSetCursorPosCallback(window, Mouse::mouse_pos_callback);
+    glfwSetKeyCallback(window, Keyboard::keyboard_button_callback);
+
+    // Setup window
     const GLFWvidmode *mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
     int x_pos = (mode->width - screen_width) / 2;
     int y_pos = (mode->height - screen_height) / 2;
@@ -59,10 +71,16 @@ bool Engine::initilize(char *windowTitle) {
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+    last_time = glfwGetTime();
+
     return true;
 }
 
 void Engine::update() {
+    double now = glfwGetTime();
+    dt = now - last_time;
+    last_time = now;
+
     glfwPollEvents();
 }
 

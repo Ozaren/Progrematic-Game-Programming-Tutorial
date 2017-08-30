@@ -27,6 +27,12 @@
     <ClCompile Include="Engine\Graphics\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\IO\Mouce.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\IO\Keyboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Engine.h">
@@ -38,12 +44,27 @@
     <ClInclude Include="Engine\Graphics\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\IO\Mouse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\IO\Keyboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Art\roof.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Art\bird 2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Art\bird.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Art\bird 2 - Edit.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

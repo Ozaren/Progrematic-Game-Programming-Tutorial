@@ -3,12 +3,17 @@
 
 #include <GLFW\glfw3.h>
 
+#include "IO\Mouse.h"
+#include "IO\Keyboard.h"
+
 #pragma comment(lib, "opengl32.lib")
 
 class Engine {
 public:
     static int screen_width;
     static int screen_height;
+    
+    static double getDT();
 
     Engine();
     ~Engine();
@@ -24,6 +29,9 @@ public:
 
 private:
     static GLFWwindow *window;
+
+    static double dt;
+    static double last_time;
 };
 
 #endif

@@ -1,5 +1,5 @@
-#ifndef TWITCH_TEXTURE
-#define TWITCH_TEXTURE
+#ifndef __PGMT_ENGINE_GRAPHICS__TEXTURE_H__
+#define __PGMT_ENGINE_GRAPHICS__TEXTURE_H__
 
 #include "GLFW/glfw3.h"
 #include "SOIL/src/SOIL.h"
